@@ -1,12 +1,12 @@
 import { Text, Container, ActionIcon, Group } from '@mantine/core';
 import { IconBrandGithub, IconBrandLinkedin, IconBrandInstagram } from '@tabler/icons-react';
-import { useStyles } from '../../utils/hooks/useStyles';
+import { useFooterStyles } from '../../utils/hooks/useStyles';
 import { FooterLinksProps } from '../../utils/types/types';
 import viteLogo from '/vite.svg';
 import './Footer.scss'
 
 const Footer = ({ data }: FooterLinksProps) => {
-    const { classes } = useStyles();
+    const { classes } = useFooterStyles();
 
     const groups = data.map((group) => {
         const links = group.links.map((link, index) => (
