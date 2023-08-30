@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Input from './pages/Input';
 import Recipe from './pages/Recipe';
 import NotFound from './pages/NotFound';
+import './App.scss'
 
 function App() {
   return (
