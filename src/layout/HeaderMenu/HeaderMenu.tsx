@@ -48,7 +48,7 @@ const HeaderMenu = ({ links }: HeaderSearchProps) => {
     });
 
     return (
-        <Header height={56} className={classes.header} mb={120}>
+        <Header height={150} className={classes.header} >
             <Container>
                 <div className={classes.inner}>
                     <img src={viteLogo} sizes='30' className="logo" alt="Vite logo" />
