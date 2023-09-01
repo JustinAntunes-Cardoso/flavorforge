@@ -2,11 +2,11 @@ import { createStyles, rem } from '@mantine/core';
 
 export const useHeaderStyles = createStyles((theme) => ({
 	header: {
-		backgroundColor: theme.fn.variant({
-			variant: 'filled',
-			color: theme.primaryColor,
-		}).background,
+		paddingTop: `calc(${theme.spacing.xl} * 2)`,
+		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
+		backgroundColor: theme.colors.brand[3],
 		borderBottom: 0,
+		width: '100%',
 	},
 
 	inner: {
@@ -14,6 +14,11 @@ export const useHeaderStyles = createStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'space-between',
 		alignItems: 'center',
+		minWidth: rem(56),
+		[theme.fn.largerThan('sm')]: {
+			width: '100%',
+			margin: '0 auto',
+		},
 	},
 
 	links: {
@@ -35,7 +40,7 @@ export const useHeaderStyles = createStyles((theme) => ({
 		borderRadius: theme.radius.sm,
 		textDecoration: 'none',
 		color: theme.white,
-		fontSize: theme.fontSizes.sm,
+		fontSize: theme.fontSizes.xl,
 		fontWeight: 500,
 
 		'&:hover': {
@@ -54,7 +59,6 @@ export const useHeaderStyles = createStyles((theme) => ({
 
 export const useFooterStyles = createStyles((theme) => ({
 	footer: {
-		marginTop: rem(120),
 		paddingTop: `calc(${theme.spacing.xl} * 2)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
 		backgroundColor:
