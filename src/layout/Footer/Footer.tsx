@@ -41,19 +41,19 @@ const Footer = ({ data }: FooterLinksProps) => {
                 <div className={classes.groups}>{groups}</div>
             </Container>
             <Container className={classes.afterFooter}>
-                <Text color="dimmed" size="sm">
+                <Text color="dimmed" size="sm" className={classes.license}>
                     © 2023 FlavourForge. All rights reserved.
                 </Text>
 
                 <Group spacing={0} className={classes.social} position="right" noWrap>
                     <ActionIcon size="lg">
-                        <IconBrandLinkedin size="1.05rem" stroke={1.5} />
+                        <IconBrandLinkedin size="2rem" stroke={1.5} className={classes.license} />
                     </ActionIcon>
                     <ActionIcon size="lg">
-                        <IconBrandInstagram size="1.05rem" stroke={1.5} />
+                        <IconBrandInstagram size="2rem" stroke={1.5} className={classes.license} />
                     </ActionIcon>
                     <ActionIcon size="lg">
-                        <IconBrandGithub size="1.05rem" stroke={1.5} />
+                        <IconBrandGithub size="2rem" stroke={1.5} className={classes.license} />
                     </ActionIcon>
                 </Group>
             </Container>

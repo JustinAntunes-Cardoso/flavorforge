@@ -6,6 +6,7 @@ const config: Config.InitialOptions = {
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'], // Specify the file extensions Jest should consider for tests
 	roots: ['<rootDir>/src'], // Define the root directory for your tests
 	testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$', // Regex pattern for test file naming conventions
+	setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
 	transform: {
 		'^.+\\.(ts|tsx)$': 'ts-jest', // Transform TypeScript files with ts-jest
 	},
