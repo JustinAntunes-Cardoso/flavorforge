@@ -5,7 +5,11 @@ export const useHeaderStyles = createStyles((theme) => ({
 		paddingTop: `calc(${theme.spacing.xl} * 2)`,
 		paddingBottom: `calc(${theme.spacing.xl} * 2)`,
 		backgroundColor: theme.colors.brand[3],
-		borderBottom: 0,
+		borderBottom: `${rem(1)} solid ${
+			theme.colorScheme === 'dark'
+				? theme.colors.dark[5]
+				: theme.colors.brand[7]
+		}`,
 		width: '100%',
 	},
 
@@ -64,9 +68,11 @@ export const useFooterStyles = createStyles((theme) => ({
 		backgroundColor:
 			theme.colorScheme === 'dark'
 				? theme.colors.dark[6]
-				: theme.colors.gray[0],
+				: theme.colors.brand[3],
 		borderTop: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
+			theme.colorScheme === 'dark'
+				? theme.colors.dark[5]
+				: theme.colors.brand[7]
 		}`,
 	},
 
@@ -81,7 +87,10 @@ export const useFooterStyles = createStyles((theme) => ({
 	},
 
 	description: {
-		marginTop: rem(5),
+		marginTop: '1rem',
+		color: theme.colors.accents[8],
+		fontSize: theme.fontSizes.sm,
+		width: '20rem',
 
 		[theme.fn.smallerThan('sm')]: {
 			marginTop: theme.spacing.xs,
@@ -117,8 +126,8 @@ export const useFooterStyles = createStyles((theme) => ({
 		color:
 			theme.colorScheme === 'dark'
 				? theme.colors.dark[1]
-				: theme.colors.gray[6],
-		fontSize: theme.fontSizes.sm,
+				: theme.colors.accents[8],
+		fontSize: theme.fontSizes.md,
 		paddingTop: rem(3),
 		paddingBottom: rem(3),
 
@@ -128,11 +137,11 @@ export const useFooterStyles = createStyles((theme) => ({
 	},
 
 	title: {
-		fontSize: theme.fontSizes.lg,
+		fontSize: theme.fontSizes.xl,
 		fontWeight: 700,
 		fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 		marginBottom: `calc(${theme.spacing.xs} / 2)`,
-		color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+		color: theme.colorScheme === 'dark' ? theme.white : theme.white,
 	},
 
 	afterFooter: {
@@ -143,7 +152,9 @@ export const useFooterStyles = createStyles((theme) => ({
 		paddingTop: theme.spacing.xl,
 		paddingBottom: theme.spacing.xl,
 		borderTop: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]
+			theme.colorScheme === 'dark'
+				? theme.colors.dark[4]
+				: theme.colors.brand[7]
 		}`,
 
 		[theme.fn.smallerThan('sm')]: {
@@ -151,7 +162,12 @@ export const useFooterStyles = createStyles((theme) => ({
 		},
 	},
 
+	license: {
+		color: theme.colors.accents[8],
+	},
+
 	social: {
+		color: theme.colors.accents[8],
 		[theme.fn.smallerThan('sm')]: {
 			marginTop: theme.spacing.xs,
 		},
