@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import _404 from './404';
 import { MantineProvider, MantineThemeOverride } from '@mantine/core';
 
@@ -11,11 +12,13 @@ const mockTheme: MantineThemeOverride = {
     primaryColor: 'brand',
 };
 
-describe('Footer Component', () => {
+describe('404 Component', () => {
     test('renders _404 component', () => {
         const { getByText } = render(
             <MantineProvider withGlobalStyles withNormalizeCSS theme={mockTheme}>
-                <_404 />
+                <MemoryRouter>
+                    <_404 />
+                </MemoryRouter>
             </MantineProvider>
         );
 
@@ -26,6 +29,23 @@ describe('Footer Component', () => {
 
         expect(titleElement).toBeInTheDocument();
         expect(descriptionElement).toBeInTheDocument();
+    });
+
+    test('Navigates to Homepage', () => {
+        const { getByText, container } = render(
+            <MantineProvider withGlobalStyles withNormalizeCSS theme={mockTheme}>
+                <MemoryRouter initialEntries={['/']}>
+                    <_404 />
+                </MemoryRouter>
+            </MantineProvider>
+        );
+
+        // Find and click the link
+        const link = getByText('Take me back to home page');
+        fireEvent.click(link);
+
+        // Check if the route changed
+        expect(container.innerHTML).toMatch(/Home/i);
     });
 });
 
