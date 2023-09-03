@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
+import { FooterLinksProps } from '../../utils/types/types';
 import { MantineProvider, MantineThemeOverride } from '@mantine/core';
 
 const mockTheme: MantineThemeOverride = {
@@ -12,22 +13,24 @@ const mockTheme: MantineThemeOverride = {
 };
 
 //Data prop
-const data = [
-    {
-        title: 'Group 1',
-        links: [
-            { label: 'Link 1', link: '/link1' },
-            { label: 'Link 2', link: '/link2' },
-        ],
-    },
-    {
-        title: 'Group 2',
-        links: [
-            { label: 'Link 3', link: '/link3' },
-            { label: 'Link 4', link: '/link4' },
-        ],
-    },
-];
+const mockData: FooterLinksProps = {
+    data: [
+        {
+            title: 'Group 1',
+            links: [
+                { label: 'Link 1', link: '/link1' },
+                { label: 'Link 2', link: '/link2' },
+            ],
+        },
+        {
+            title: 'Group 2',
+            links: [
+                { label: 'Link 3', link: '/link3' },
+                { label: 'Link 4', link: '/link4' },
+            ],
+        },
+    ]
+};
 
 
 
@@ -35,7 +38,7 @@ describe('Footer Component', () => {
     it('should render the footer text', () => {
         render(
             <MantineProvider withGlobalStyles withNormalizeCSS theme={mockTheme}>
-                <Footer data={data} />
+                <Footer data={mockData.data} />
             </MantineProvider>
         );
         const footerElement = screen.getByText(/© 2023 FlavourForge. All rights reserved./i);
@@ -45,12 +48,12 @@ describe('Footer Component', () => {
     it('should render the links from props', () => {
         render(
             <MantineProvider withGlobalStyles withNormalizeCSS theme={mockTheme}>
-                <Footer data={data} />
+                <Footer data={mockData.data} />
             </MantineProvider>
         );
 
         // Check if each link label is present in the rendered output
-        data.forEach((group) => {
+        mockData.data.forEach((group) => {
             group.links.forEach((link) => {
                 const linkElement = screen.getByText(link.label);
                 expect(linkElement).toBeInTheDocument();
