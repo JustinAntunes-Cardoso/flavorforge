@@ -9,7 +9,7 @@ const _404 = () => {
     const { classes } = use404Styles();
 
     return (
-        <section className={classes.root}>
+        <main className={classes.root}>
             <Container>
                 <div className={classes.inner}>
                     <Illustration className={classes.image} />
@@ -30,7 +30,7 @@ const _404 = () => {
                     </div>
                 </div>
             </Container>
-        </section>
+        </main>
     );
 }
 
