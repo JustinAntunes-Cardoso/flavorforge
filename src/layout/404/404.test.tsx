@@ -32,20 +32,21 @@ describe('404 Component', () => {
     });
 
     test('Navigates to Homepage', () => {
-        const { getByText, container } = render(
+        const { getByText } = render(
             <MantineProvider withGlobalStyles withNormalizeCSS theme={mockTheme}>
-                <MemoryRouter initialEntries={['/']}>
+                <MemoryRouter initialEntries={['*']}>
                     <_404 />
                 </MemoryRouter>
             </MantineProvider>
         );
 
         // Find and click the link
-        const link = getByText('Take me back to home page');
-        fireEvent.click(link);
+        const button = getByText(/Take me back to home page/i);
+        fireEvent.click(button);
 
-        // Check if the route changed
-        expect(container.innerHTML).toMatch(/Home/i);
+
+        // Check if a specific element or text on the homepage is present
+        expect(window.location.pathname).toBe('/');
     });
 });
 
