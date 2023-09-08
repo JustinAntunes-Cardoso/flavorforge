@@ -12,6 +12,7 @@ import {
 } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
 import veg from '../../assets/icons/vegetables_hero.svg';
+import { Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -102,7 +103,7 @@ const useStyles = createStyles((theme) => ({
 
     highlight: {
         position: 'relative',
-        backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
+        backgroundColor: theme.colors.secondary[3],
         borderRadius: theme.radius.sm,
         padding: `${rem(4)} ${rem(12)}`,
     },
@@ -145,12 +146,16 @@ const Hero = () => {
                         </List>
 
                         <Group mt={30}>
-                            <Button radius="xl" size="md" className={classes.control}>
-                                Get Started
-                            </Button>
-                            <Button variant="default" radius="xl" size="md" className={`${classes.control} ${classes.link}`}>
-                                Source code
-                            </Button>
+                            <Link to='/input'>
+                                <Button radius="xl" size="md" className={classes.control}>
+                                    Get Started
+                                </Button>
+                            </Link>
+                            <a href="https://github.com/JustinAntunes-Cardoso/flavorforge" target="_blank" rel="noopener noreferrer">
+                                <Button variant="default" radius="xl" size="md" className={`${classes.control} ${classes.link}`}>
+                                    Source code
+                                </Button>
+                            </a>
                         </Group>
                     </div>
                     <Image src={veg} className={classes.image} />
