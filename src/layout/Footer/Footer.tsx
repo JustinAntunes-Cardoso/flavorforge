@@ -1,9 +1,8 @@
 import { Text, Container, ActionIcon, Group } from '@mantine/core';
-import { IconBrandGithub, IconBrandLinkedin, IconBrandInstagram } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconAppWindow } from '@tabler/icons-react';
 import { useFooterStyles } from '../../utils/hooks/useStyles';
 import { FooterLinksProps } from '../../utils/types/types';
 import viteLogo from '/vite.svg';
-import './Footer.scss'
 
 const Footer = ({ data }: FooterLinksProps) => {
     const { classes } = useFooterStyles();
@@ -50,7 +49,7 @@ const Footer = ({ data }: FooterLinksProps) => {
                         <IconBrandLinkedin size="2rem" stroke={1.5} className={classes.license} />
                     </ActionIcon>
                     <ActionIcon size="lg">
-                        <IconBrandInstagram size="2rem" stroke={1.5} className={classes.license} />
+                        <IconAppWindow size="2rem" stroke={1.5} className={classes.license} />
                     </ActionIcon>
                     <ActionIcon size="lg">
                         <IconBrandGithub size="2rem" stroke={1.5} className={classes.license} />

@@ -1,7 +1,6 @@
 import Header from '../../layout/HeaderMenu';
 import Footer from '../../layout/Footer';
 import _404 from '../../layout/404/404';
-import './NotFound.scss'
 
 //Global data
 import { headerData } from '../../utils/constants/headerSearch';
