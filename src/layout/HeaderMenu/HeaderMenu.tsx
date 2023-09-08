@@ -4,7 +4,6 @@ import { IconChevronDown } from '@tabler/icons-react';
 import { useHeaderStyles } from '../../utils/hooks/useStyles';
 import { HeaderSearchProps } from '../../utils/types/types';
 import viteLogo from '/vite.svg';
-import './HeaderMenu.scss';
 
 const HeaderMenu = ({ links }: HeaderSearchProps) => {
     const [opened, { toggle }] = useDisclosure(false);

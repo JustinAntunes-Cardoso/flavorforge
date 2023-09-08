@@ -2,8 +2,6 @@ import { Container, Title, Text, Button, Group } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { use404Styles } from '../../utils/hooks/useStyles';
 import { Illustration } from './Illustration';
-import './404.scss'
-
 
 const _404 = () => {
     const { classes } = use404Styles();
@@ -11,7 +9,7 @@ const _404 = () => {
     return (
         <main className={classes.root}>
             <Container>
-                <div className={classes.inner}>
+                <section className={classes.inner}>
                     <Illustration className={classes.image} />
                     <div className={classes.content}>
                         <Title className={classes.title}>You have found a secret place</Title>
@@ -28,7 +26,7 @@ const _404 = () => {
                             </Link>
                         </Group>
                     </div>
-                </div>
+                </section>
             </Container>
         </main>
     );
