@@ -1,6 +1,6 @@
 import { Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
-import { useButtonStyles } from '../../utils/styles/component/useButtonStyles';
+import useButtonStyles from '../../utils/styles/component/useButtonStyles';
 
 interface LinkButtonProps {
     text: string;
