@@ -2,7 +2,7 @@ import { Container, Title, Text, Group } from '@mantine/core';
 import LinkButton from '../../components/LinkButton';
 import { use404Styles } from '../../utils/styles/layout/use404Styles';
 import { routes } from '../../utils/constants/globals';
-import { Illustration } from './Illustration';
+import { _404Image } from './404Icon';
 
 const _404 = () => {
     const { classes } = use404Styles();
@@ -11,7 +11,7 @@ const _404 = () => {
         <main className={classes.root}>
             <Container>
                 <section className={classes.inner}>
-                    <Illustration className={classes.image} />
+                    <_404Image className={classes.image} />
                     <div className={classes.content}>
                         <Title className={classes.title}>You have found a secret place</Title>
                         <Text size="lg" align="center" className={classes.description}>

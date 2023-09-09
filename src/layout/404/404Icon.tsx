@@ -1,6 +1,6 @@
 import { useMantineTheme } from '@mantine/core';
 
-export function Illustration(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function _404Image(props: React.ComponentPropsWithoutRef<'svg'>) {
     const theme = useMantineTheme();
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 332 145" {...props}>

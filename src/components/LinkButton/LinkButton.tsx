@@ -8,8 +8,8 @@ interface LinkButtonProps {
 }
 
 const LinkButton = ({ text, to }: LinkButtonProps) => {
-
     const { classes } = useButtonStyles();
+
     return (
         <Link to={to}>
             <Button radius="xl" size="md" className={classes.control}>{text}</Button>
