@@ -1,118 +1,14 @@
-import {
-    createStyles,
-    Image,
-    Container,
-    Title,
-    Button,
-    Group,
-    Text,
-    List,
-    ThemeIcon,
-    rem,
-} from '@mantine/core';
+import { Image, Container, Title, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
+import LinkButton from '../../components/LinkButton';
+import AnchorButton from '../../components/AnchorButton';
+import { routes, hrefs } from '../../utils/constants/globals';
+import useHeroStyles from '../../utils/styles/layout/useHeroStyles';
 import { IconCheck } from '@tabler/icons-react';
 import veg from '../../assets/icons/vegetables_hero.svg';
-import LinkButton from '../../components/LinkButton';
-import { routes, hrefs } from '../../utils/constants/globals';
-
-const useStyles = createStyles((theme) => ({
-    root: {
-        backgroundColor: theme.fn.variant({
-            variant: 'filled',
-            color: theme.primaryColor,
-        }).background,
-    },
-
-    inner: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        paddingTop: `calc(${theme.spacing.xl} * 8)`,
-        paddingBottom: `calc(${theme.spacing.xl} * 8)`,
-    },
-
-    content: {
-        maxWidth: rem(480),
-        marginRight: `calc(${theme.spacing.xl} * 3)`,
-
-        [theme.fn.smallerThan('md')]: {
-            maxWidth: '100%',
-            marginRight: 0,
-        },
-    },
-
-    title: {
-        color: theme.colorScheme === 'dark' ? theme.white : theme.white,
-        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-        fontSize: rem(44),
-        lineHeight: 1.3,
-        fontWeight: 900,
-
-        [theme.fn.smallerThan('xs')]: {
-            fontSize: rem(28),
-        },
-    },
-
-    subtitle: {
-        color: theme.colorScheme === 'dark' ? theme.white : theme.white,
-        fontSize: rem(22),
-    },
-
-    emoji: {
-        fontSize: rem(36),
-    },
-
-    text: {
-        color: theme.colorScheme === 'dark' ? theme.white : theme.white,
-        fontSize: rem(18),
-    },
-
-    bullet: {
-        backgroundColor: theme.colors.secondary[3],
-        borderRadius: 10,
-        marginTop: rem(1.5),
-
-    },
-
-    control: {
-        [theme.fn.smallerThan('xs')]: {
-            flex: 1,
-        },
-        backgroundColor: theme.colors.secondary[3],
-        '&:hover': {
-            backgroundColor: theme.colors.secondary[5],
-            borderColor: theme.colors.secondary[4],
-        },
-    },
-
-    link: {
-        color: theme.white,
-        backgroundColor: theme.colors.brand[6],
-        borderColor: theme.colors.accents[7],
-        '&:hover': {
-            backgroundColor: theme.colors.accents[3],
-            borderColor: theme.colors.accents[7],
-        },
-    },
-
-    image: {
-        flex: 1,
-
-        [theme.fn.smallerThan('md')]: {
-            display: 'none',
-        },
-    },
-
-    highlight: {
-        position: 'relative',
-        backgroundColor: theme.colors.secondary[3],
-        borderRadius: theme.radius.sm,
-        padding: `${rem(4)} ${rem(12)}`,
-    },
-}));
 
 const Hero = () => {
+    const { classes } = useHeroStyles();
 
-    const { classes } = useStyles();
     return (
         <main className={classes.root}>
             <Container>
@@ -129,11 +25,9 @@ const Hero = () => {
                             mt={30}
                             spacing="sm"
                             size="sm"
-                            icon={
-                                <ThemeIcon size={20} radius="xl">
-                                    <IconCheck size={rem(15)} stroke={1.5} className={classes.bullet} />
-                                </ThemeIcon>
-                            }
+                            icon={<ThemeIcon size={20} radius="xl">
+                                <IconCheck size={rem(15)} stroke={1.5} className={classes.bullet} />
+                            </ThemeIcon>}
                             className={classes.text}
                         >
                             <List.Item>
@@ -149,11 +43,7 @@ const Hero = () => {
 
                         <Group mt={30}>
                             <LinkButton to={routes.input} text='Get Started' />
-                            <a href={hrefs.github} target="_blank" rel="noopener noreferrer">
-                                <Button variant="default" radius="xl" size="md" className={`${classes.control} ${classes.link}`}>
-                                    Source code
-                                </Button>
-                            </a>
+                            <AnchorButton href={hrefs.github} text='Source code' />
                         </Group>
                     </div>
                     <Image src={veg} className={classes.image} />
@@ -161,6 +51,6 @@ const Hero = () => {
             </Container>
         </main>
     );
-}
+};
 
-export default Hero
+export default Hero;
