@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core';
 
-export const useButtonStyles = createStyles((theme) => ({
+const useButtonStyles = createStyles((theme) => ({
 	control: {
 		[theme.fn.smallerThan('xs')]: {
 			flex: 1,
@@ -12,3 +12,5 @@ export const useButtonStyles = createStyles((theme) => ({
 		},
 	},
 }));
+
+export default useButtonStyles;
