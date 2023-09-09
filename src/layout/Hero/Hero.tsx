@@ -12,7 +12,8 @@ import {
 } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
 import veg from '../../assets/icons/vegetables_hero.svg';
-import { Link } from 'react-router-dom';
+import LinkButton from '../../components/LinkButton';
+import { routes, hrefs } from '../../utils/constants/globals';
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -110,6 +111,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const Hero = () => {
+
     const { classes } = useStyles();
     return (
         <main className={classes.root}>
@@ -146,12 +148,8 @@ const Hero = () => {
                         </List>
 
                         <Group mt={30}>
-                            <Link to='/input'>
-                                <Button radius="xl" size="md" className={classes.control}>
-                                    Get Started
-                                </Button>
-                            </Link>
-                            <a href="https://github.com/JustinAntunes-Cardoso/flavorforge" target="_blank" rel="noopener noreferrer">
+                            <LinkButton to={routes.input} text='Get Started' />
+                            <a href={hrefs.github} target="_blank" rel="noopener noreferrer">
                                 <Button variant="default" radius="xl" size="md" className={`${classes.control} ${classes.link}`}>
                                     Source code
                                 </Button>

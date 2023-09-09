@@ -1,8 +1,8 @@
 import { Header, Menu, Group, Center, Burger, Container } from '@mantine/core';
+import useHeaderStyles from '../../utils/styles/layout/useHeaderStyles';
+import { HeaderSearchProps } from '../../utils/types/types';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
-import { useHeaderStyles } from '../../utils/hooks/useStyles';
-import { HeaderSearchProps } from '../../utils/types/types';
 import viteLogo from '/vite.svg';
 
 const HeaderMenu = ({ links }: HeaderSearchProps) => {

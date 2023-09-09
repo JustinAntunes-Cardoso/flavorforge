@@ -1,6 +1,7 @@
-import { Container, Title, Text, Button, Group } from '@mantine/core';
-import { Link } from 'react-router-dom';
-import { use404Styles } from '../../utils/hooks/useStyles';
+import { Container, Title, Text, Group } from '@mantine/core';
+import LinkButton from '../../components/LinkButton';
+import { use404Styles } from '../../utils/styles/layout/use404Styles';
+import { routes } from '../../utils/constants/globals';
 import { Illustration } from './Illustration';
 
 const _404 = () => {
@@ -19,11 +20,7 @@ const _404 = () => {
                             the page has been moved to another URL
                         </Text>
                         <Group position="center">
-                            <Link to="/">
-                                <Button size="md" variant="white">
-                                    Take me back to home page
-                                </Button>
-                            </Link>
+                            <LinkButton to={routes.home} text='Take me back to home page' />
                         </Group>
                     </div>
                 </section>
