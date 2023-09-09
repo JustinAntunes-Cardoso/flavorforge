@@ -1,6 +1,6 @@
 import { Text, Container, ActionIcon, Group } from '@mantine/core';
 import { IconBrandGithub, IconBrandLinkedin, IconAppWindow } from '@tabler/icons-react';
-import { useFooterStyles } from '../../utils/hooks/useStyles';
+import useFooterStyles from '../../utils/styles/layout/useFooterStyles';
 import { FooterLinksProps } from '../../utils/types/types';
 import viteLogo from '/vite.svg';
 

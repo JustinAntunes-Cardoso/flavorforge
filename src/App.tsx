@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Input from './pages/Input';
 import Recipe from './pages/Recipe';
 import NotFound from './pages/NotFound';
+import { routes } from './utils/constants/globals';
 import './App.scss'
 
 function App() {
@@ -21,9 +22,9 @@ function App() {
       }}>
       <Router>
         <Routes>
-          <Route path="/" Component={Home} />
-          <Route path="/input" Component={Input} />
-          <Route path="/recipe" Component={Recipe} />
+          <Route path={routes.home} Component={Home} />
+          <Route path={routes.input} Component={Input} />
+          <Route path={routes.recipe} Component={Recipe} />
           <Route path='*' Component={NotFound} />
         </Routes>
       </Router>
