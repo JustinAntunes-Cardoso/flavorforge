@@ -16,8 +16,6 @@ const useFooterStyles = createStyles((theme) => ({
 	},
 
 	logo: {
-		maxWidth: rem(200),
-
 		[theme.fn.smallerThan('sm')]: {
 			display: 'flex',
 			flexDirection: 'column',
@@ -25,8 +23,21 @@ const useFooterStyles = createStyles((theme) => ({
 		},
 	},
 
+	bluefin: {
+		maxWidth: rem(80),
+	},
+
+	bluefinText: {
+		fontFamily: 'Hyperion',
+	},
+
+	company: {
+		display: 'flex',
+		flexDirection: 'row',
+	},
+
 	description: {
-		marginTop: '1rem',
+		marginTop: '0.1rem',
 		color: theme.colors.accents[8],
 		fontSize: theme.fontSizes.sm,
 		width: '20rem',
@@ -40,6 +51,7 @@ const useFooterStyles = createStyles((theme) => ({
 	inner: {
 		display: 'flex',
 		justifyContent: 'space-between',
+		alignItems: 'center',
 
 		[theme.fn.smallerThan('sm')]: {
 			flexDirection: 'column',

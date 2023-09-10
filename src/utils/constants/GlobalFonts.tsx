@@ -1,14 +1,32 @@
 import { Global } from '@mantine/core';
+import hyperionReg from '../../assets/fonts/Hyperion/Hyperion-Regular.otf';
+import hyperionBold from '../../assets/fonts/Hyperion/Hyperion-Bold.otf';
 import regular from '../../assets/fonts/Greycliff-CF/greycliffcf-regular.otf';
 import bold from '../../assets/fonts/Greycliff-CF/greycliffcf-bold.otf';
 import heavy from '../../assets/fonts/Greycliff-CF/greycliffcf-heavy.otf';
 
-const CustomFonts = () => {
+const GlobalFonts = () => {
     console.log(bold)
 
     return (
         <Global
             styles={[
+                {
+                    '@font-face': {
+                        fontFamily: 'Hyperion',
+                        src: `url('${hyperionReg}') format("otf")`,
+                        fontWeight: 400,
+                        fontStyle: 'normal',
+                    },
+                },
+                {
+                    '@font-face': {
+                        fontFamily: 'Hyperion',
+                        src: `url('${hyperionBold}') format("otf")`,
+                        fontWeight: 700,
+                        fontStyle: 'normal',
+                    },
+                },
                 {
                     '@font-face': {
                         fontFamily: 'Greycliff CF',
@@ -38,4 +56,4 @@ const CustomFonts = () => {
     );
 }
 
-export default CustomFonts;
+export default GlobalFonts;
