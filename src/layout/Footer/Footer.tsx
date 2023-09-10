@@ -1,8 +1,9 @@
-import { Text, Container, ActionIcon, Group } from '@mantine/core';
+import { Text, Container, ActionIcon, Group, Image } from '@mantine/core';
 import { IconBrandGithub, IconBrandLinkedin, IconAppWindow } from '@tabler/icons-react';
 import useFooterStyles from '../../utils/styles/layout/useFooterStyles';
 import { FooterLinksProps } from '../../utils/types/types';
-import viteLogo from '/vite.svg';
+import sharkFin from '../../assets/logos/sharkfin.svg';
+import './Footer.scss';
 
 const Footer = ({ data }: FooterLinksProps) => {
     const { classes } = useFooterStyles();
@@ -30,10 +31,15 @@ const Footer = ({ data }: FooterLinksProps) => {
 
     return (
         <footer className={classes.footer}>
-            <Container className={classes.inner}>
+            <Container className={classes.inner} py={4}>
                 <div className={classes.logo}>
-                    <img src={viteLogo} sizes='30' className="logo" alt="Vite logo" />
-                    <Text size="xs" color="dimmed" className={classes.description}>
+                    <Group className={classes.company} align='center'>
+                        <Image src={sharkFin} alt="Blue Fin logo" className={classes.bluefin} />
+                        <Text size={70} variant="gradient" gradient={{ from: '#557c9c', to: '#163258', deg: 180 }} className={classes.bluefinText} >
+                            BLUEFIN
+                        </Text>
+                    </Group>
+                    <Text size="sm" color="dimmed" className={classes.description}>
                         Ingredients Unlocked, Recipes Discovered: FlavorForge - Where Culinary Creativity Begins!
                     </Text>
                 </div>
@@ -41,7 +47,7 @@ const Footer = ({ data }: FooterLinksProps) => {
             </Container>
             <Container className={classes.afterFooter}>
                 <Text color="dimmed" size="sm" className={classes.license}>
-                    © 2023 FlavourForge. All rights reserved.
+                    © 2023 Bluefin. All rights reserved.
                 </Text>
 
                 <Group spacing={0} className={classes.social} position="right" noWrap>
