@@ -5,7 +5,7 @@ import Input from './pages/Input';
 import RecipeList from './pages/RecipeList';
 import Recipe from './pages/Recipe';
 import NotFound from './pages/NotFound';
-import GlobalFonts from './utils/constants/CustomFonts';
+import GlobalFonts from './utils/constants/GlobalFonts';
 import { routes } from './utils/constants/globals';
 import './App.scss'
 
