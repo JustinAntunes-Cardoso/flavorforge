@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
 import Home from './pages/Home';
 import Input from './pages/Input';
+import RecipeList from './pages/RecipeList';
 import Recipe from './pages/Recipe';
 import NotFound from './pages/NotFound';
+import GlobalFonts from './utils/constants/CustomFonts';
 import { routes } from './utils/constants/globals';
 import './App.scss'
 
@@ -19,11 +21,14 @@ function App() {
           accents: ['#F57F17', '#F9A825', '#FBC02D', '#FBC02D', '#FFEB3B', '#FFEE58', '#FFEE58', '#FFF59D', '#FFF9C4'],
         },
         primaryColor: 'brand',
+        fontFamily: 'Greycliff CF, sans-serif',
       }}>
+      <GlobalFonts />
       <Router>
         <Routes>
           <Route path={routes.home} Component={Home} />
           <Route path={routes.input} Component={Input} />
+          <Route path={routes.recipeList} Component={RecipeList} />
           <Route path={routes.recipe} Component={Recipe} />
           <Route path='*' Component={NotFound} />
         </Routes>
