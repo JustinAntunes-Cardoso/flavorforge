@@ -13,9 +13,7 @@ const LinkButton = ({ text, to, leftIcon }: LinkButtonProps) => {
     const { classes } = useButtonStyles();
 
     return (
-        <Link to={to}>
-            <Button radius="xl" size="md" className={classes.control} leftIcon={leftIcon ? leftIcon : ''}>{text}</Button>
-        </Link>
+        <Button radius="xl" size="md" className={classes.control} leftIcon={leftIcon ? leftIcon : ''} component={Link} to={to}>{text}</Button>
     );
 };
 
