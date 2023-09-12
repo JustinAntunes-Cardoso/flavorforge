@@ -10,11 +10,9 @@ const AnchorButton = ({ text, href }: AnchorButtonProps) => {
     const { classes } = useAnchorStyles();
 
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-            <Button variant="default" radius="xl" size="md" className={classes.anchor}>
-                {text}
-            </Button>
-        </a>
+        <Button variant="default" radius="xl" size="md" className={classes.anchor} component='a' href={href} target="_blank" rel="noopener noreferrer">
+            {text}
+        </Button>
     )
 }
 
