@@ -6,7 +6,6 @@ import bold from '../../assets/fonts/Greycliff-CF/greycliffcf-bold.otf';
 import heavy from '../../assets/fonts/Greycliff-CF/greycliffcf-heavy.otf';
 
 const GlobalFonts = () => {
-    console.log(bold)
 
     return (
         <Global
