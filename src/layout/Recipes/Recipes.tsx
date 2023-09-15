@@ -1,6 +1,9 @@
-import { createStyles, Container, SimpleGrid, Title, Text } from "@mantine/core";
+import { Container, SimpleGrid, Title, Text } from "@mantine/core";
 import RecipeCard from "../../components/RecipeCard";
-
+import useRecipesStyles from "../../utils/styles/layout/useRecipesStyles";
+import LinkButton from "../../components/LinkButton";
+import { IconChevronLeft } from '@tabler/icons-react';
+import { routes } from "../../utils/constants/globals";
 
 const mockdata = [
     {
@@ -38,29 +41,20 @@ const mockdata = [
 ];
 
 const Recipes = () => {
-    const useStyles = createStyles((theme) => ({
-        background: {
-            backgroundColor: theme.fn.variant({
-                variant: 'filled',
-                color: theme.primaryColor,
-            }).background,
-        },
-    }));
-
-    const { classes } = useStyles();
+    const { classes } = useRecipesStyles();
 
     return (
         <main className={classes.background}>
             <Container py="xl">
-                <Title>
+                <LinkButton to={routes.input} text='Back' leftIcon={<IconChevronLeft />} />
+                <Title className={classes.text}>
                     Generated Recipes
                 </Title>
-                <Text size="lg">
+                <Text size="lg" className={classes.text}>
                     Explore delicious recipes based on your selected ingredients.
                 </Text>
             </Container>
             <Container py="xl">
-
                 <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                     {mockdata.map((info, index) => <RecipeCard key={index} {...info} />)}
                 </SimpleGrid>
