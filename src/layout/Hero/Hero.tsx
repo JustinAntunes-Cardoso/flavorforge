@@ -46,7 +46,7 @@ const Hero = () => {
                             <AnchorButton href={hrefs.github} text='Source code' />
                         </Group>
                     </div>
-                    <Image src={veg} className={classes.image} />
+                    <Image src={veg} className={classes.image} alt='Vegetables Icon' />
                 </div>
             </Container>
         </main>
