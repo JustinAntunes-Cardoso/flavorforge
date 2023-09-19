@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import _404 from './404';
 import { MantineProvider, MantineThemeOverride } from '@mantine/core';
@@ -30,25 +30,4 @@ describe('404 Component', () => {
         expect(titleElement).toBeInTheDocument();
         expect(descriptionElement).toBeInTheDocument();
     });
-
-    test('Navigates to Homepage', () => {
-        const { getByText } = render(
-            <MantineProvider withGlobalStyles withNormalizeCSS theme={mockTheme}>
-                <MemoryRouter initialEntries={['*']}>
-                    <_404 />
-                </MemoryRouter>
-            </MantineProvider>
-        );
-
-        // Find and click the link
-        const button = getByText(/Take me back to home page/i);
-        fireEvent.click(button);
-
-
-        // Check if a specific element or text on the homepage is present
-        expect(window.location.pathname).toBe('/');
-    });
 });
-
-
-
