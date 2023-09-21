@@ -1,5 +1,5 @@
 import HeaderMenu from '../../layout/HeaderMenu'
-import Hero from '../../layout/Hero'
+import Form from '../../layout/Form'
 import Footer from '../../layout/Footer'
 
 //Global data
@@ -10,7 +10,7 @@ const Input = () => {
     return (
         <>
             <HeaderMenu links={headerData.links} />
-            <Hero />
+            <Form />
             <Footer data={footerData.data} />
         </>
     )

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import _404 from './404';
 import { MantineProvider, MantineThemeOverride } from '@mantine/core';
+import _404 from './404';
 
 const mockTheme: MantineThemeOverride = {
     colors: {
