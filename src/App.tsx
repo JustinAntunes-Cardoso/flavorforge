@@ -13,8 +13,6 @@ import './App.scss'
 function App() {
   return (
     <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
       theme={globalTheme}>
       <GlobalFonts />
       <Router>
