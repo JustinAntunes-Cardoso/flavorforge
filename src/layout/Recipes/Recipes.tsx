@@ -1,4 +1,5 @@
 import { Container, SimpleGrid, Title, Text } from "@mantine/core";
+import { useLocation } from 'react-router-dom';
 import RecipeCard from "../../components/RecipeCard";
 import useRecipesStyles from "../../utils/styles/layout/useRecipesStyles";
 import LinkButton from "../../components/LinkButton";
@@ -43,6 +44,11 @@ const mockdata = [
 const Recipes = () => {
     const { classes } = useRecipesStyles();
 
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const serializedItems = searchParams.get('items');
+    const items = serializedItems ? serializedItems.split(',') : [];
+
     return (
         <main className={classes.background}>
             <Container py="xl">
@@ -55,10 +61,11 @@ const Recipes = () => {
                 </Text>
             </Container>
             <Container py="xl">
-                <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+                <SimpleGrid cols={3}>
                     {mockdata.map((info, index) => <RecipeCard key={index} {...info} />)}
                 </SimpleGrid>
             </Container>
+            {items}
         </main>
     )
 }
