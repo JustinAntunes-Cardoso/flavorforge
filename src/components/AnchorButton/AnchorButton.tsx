@@ -1,5 +1,5 @@
 import { Button } from '@mantine/core';
-import useAnchorStyles from '../../utils/styles/component/useAnchorStyles';
+import classes from './AnchorButton.module.scss'
 
 interface AnchorButtonProps {
     text: string;
@@ -7,7 +7,6 @@ interface AnchorButtonProps {
 }
 
 const AnchorButton = ({ text, href }: AnchorButtonProps) => {
-    const { classes } = useAnchorStyles();
 
     return (
         <Button variant="default" radius="xl" size="md" className={classes.anchor} component='a' href={href} target="_blank" rel="noopener noreferrer">
