@@ -12,6 +12,7 @@ const globalTheme: MantineThemeOverride = {
 			'#FFB74D',
 			'#FFE082',
 			'#FFECB3',
+			'#FFF6E1',
 		],
 		secondary: [
 			'#33691E',
@@ -23,6 +24,7 @@ const globalTheme: MantineThemeOverride = {
 			'#AED581',
 			'#E6EE9C',
 			'#DCEDC8',
+			'#F2FCE8',
 		],
 		accents: [
 			'#F57F17',
@@ -34,6 +36,7 @@ const globalTheme: MantineThemeOverride = {
 			'#FFEE58',
 			'#FFF59D',
 			'#FFF9C4',
+			'#FFFEE0',
 		],
 	},
 	primaryColor: 'brand',
