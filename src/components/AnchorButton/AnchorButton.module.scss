@@ -1,0 +1,13 @@
+.anchor {
+	@media (max-width: $mantine-breakpoint-xs) {
+		flex: 1;
+	}
+	color: var(--mantine-color-white);
+	background-color: var(--mantine-color-brand-6);
+	border-color: var(--mantine-color-accents-7);
+
+	&:hover {
+		background-color: var(--mantine-color-accents-3);
+		border-color: var(--mantine-color-accents-7);
+	}
+}
