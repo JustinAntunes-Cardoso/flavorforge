@@ -1,13 +1,12 @@
-import { Header, Menu, Group, Center, Burger, Container } from '@mantine/core';
-import useHeaderStyles from '../../utils/styles/layout/useHeaderStyles';
+import { Menu, Group, Center, Burger, Container } from '@mantine/core';
 import { HeaderSearchProps } from '../../utils/types/types';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
+import classes from './HeaderMenu.module.scss';
 import viteLogo from '/vite.svg';
 
 const HeaderMenu = ({ links }: HeaderSearchProps) => {
     const [opened, { toggle }] = useDisclosure(false);
-    const { classes } = useHeaderStyles();
 
     const items = links.map((link) => {
         const menuItems = link.links?.map((item) => (
@@ -47,23 +46,17 @@ const HeaderMenu = ({ links }: HeaderSearchProps) => {
     });
 
     return (
-        <Header height={150} className={classes.header} >
-            <Container>
+        <header className={classes.header}>
+            <Container size="md">
                 <div className={classes.inner}>
                     <img src={viteLogo} sizes='30' className="logo" alt="Vite logo" />
-                    <Group spacing={5} className={classes.links}>
+                    <Group gap={5} visibleFrom="sm">
                         {items}
                     </Group>
-                    <Burger
-                        opened={opened}
-                        onClick={toggle}
-                        className={classes.burger}
-                        size="sm"
-                        color="#fff"
-                    />
+                    <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
                 </div>
             </Container>
-        </Header>
+        </header>
     );
 }
 
