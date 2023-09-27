@@ -2,12 +2,11 @@ import { Image, Container, Title, Group, Text, List, ThemeIcon, rem } from '@man
 import LinkButton from '../../components/LinkButton';
 import AnchorButton from '../../components/AnchorButton';
 import { routes, hrefs } from '../../utils/constants/globals';
-import useHeroStyles from '../../utils/styles/layout/useHeroStyles';
 import { IconCheck } from '@tabler/icons-react';
+import classes from './Hero.module.scss';
 import veg from '../../assets/icons/vegetables_hero.svg';
 
 const Hero = () => {
-    const { classes } = useHeroStyles();
 
     return (
         <main className={classes.root}>
