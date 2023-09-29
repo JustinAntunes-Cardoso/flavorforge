@@ -1,6 +1,6 @@
 import { Button } from '@mantine/core';
 import { Link } from 'react-router-dom';
-import useButtonStyles from '../../utils/styles/component/useButtonStyles';
+import classes from './LinkButton.module.scss';
 import { ReactNode } from 'react';
 
 interface LinkButtonProps {
@@ -10,10 +10,11 @@ interface LinkButtonProps {
 }
 
 const LinkButton = ({ text, to, leftIcon }: LinkButtonProps) => {
-    const { classes } = useButtonStyles();
 
     return (
-        <Button radius="xl" size="md" className={classes.control} leftIcon={leftIcon ? leftIcon : ''} component={Link} to={to}>{text}</Button>
+        <Button radius="xl" size="md" className={classes.control} leftSection={leftIcon ? leftIcon : ''} component={Link} to={to}>
+            {text}
+        </Button>
     );
 };
 

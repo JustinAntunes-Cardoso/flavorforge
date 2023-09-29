@@ -1,0 +1,13 @@
+.control {
+	@media (max-width: $mantine-breakpoint-xs) {
+		flex: 1;
+	}
+	color: var(--mantine-color-white);
+	background-color: var(--mantine-color-secondary-3);
+	// border-color: var(--mantine-color-accents-7);
+
+	&:hover {
+		background-color: var(--mantine-color-secondary-5);
+		border-color: var(--mantine-color-secondary-4);
+	}
+}

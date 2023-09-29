@@ -51,12 +51,6 @@
 	background-color: var(--mantine-color-secondary-3);
 }
 
-.control {
-	@media (max-width: $mantine-breakpoint-xs) {
-		flex: 1;
-	}
-}
-
 .image {
 	width: rem(376px);
 	height: rem(356px);
