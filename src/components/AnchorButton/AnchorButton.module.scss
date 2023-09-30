@@ -1,5 +1,7 @@
+@import '../../styles/partials/variables';
+
 .anchor {
-	@media (max-width: $mantine-breakpoint-xs) {
+	@media (max-width: $mobileL-breakpoint) {
 		flex: 1;
 	}
 	color: var(--mantine-color-white);
