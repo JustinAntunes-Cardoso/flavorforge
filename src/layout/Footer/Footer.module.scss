@@ -19,7 +19,7 @@
 .logo {
   max-width: rem(200px);
 
-  @media (min-width: $tablet-breakpoint) {
+  @media (max-width: $mobileL-breakpoint) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,7 @@
 .description {
   margin-top: rem(5px);
 
-  @media (min-width: $tablet-breakpoint) {
+  @media (max-width: $mobileL-breakpoint) {
     margin-top: var(--mantine-spacing-xs);
     text-align: center;
   }
@@ -44,7 +44,7 @@
   display: flex;
   justify-content: space-between;
 
-  @media (min-width: $tablet-breakpoint) {
+  @media (max-width: $mobileL-breakpoint) {
     flex-direction: column;
     align-items: center;
   }
@@ -54,7 +54,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @media (min-width: $tablet-breakpoint) {
+  @media (max-width: $mobileL-breakpoint) {
     display: none;
   }
 }
@@ -92,13 +92,13 @@
   padding-bottom: var(--mantine-spacing-xl);
   border-top: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
 
-  @media (min-width: $tablet-breakpoint) {
+  @media (max-width: $mobileL-breakpoint) {
     flex-direction: column;
   }
 }
 
 .social {
-  @media (min-width: $tablet-breakpoint) {
+  @media (max-width: $mobileL-breakpoint) {
     margin-top: var(--mantine-spacing-xs);
   }
 }
