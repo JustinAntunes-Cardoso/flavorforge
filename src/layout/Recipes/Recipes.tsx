@@ -1,10 +1,10 @@
 import { Container, SimpleGrid, Title, Text } from "@mantine/core";
 import { useLocation } from 'react-router-dom';
 import RecipeCard from "../../components/RecipeCard";
-import useRecipesStyles from "../../utils/styles/layout/useRecipesStyles";
 import LinkButton from "../../components/LinkButton";
 import { IconChevronLeft } from '@tabler/icons-react';
 import { routes } from "../../utils/constants/globals";
+import classes from './Recipes.module.scss';
 
 const mockdata = [
     {
@@ -42,7 +42,6 @@ const mockdata = [
 ];
 
 const Recipes = () => {
-    const { classes } = useRecipesStyles();
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
