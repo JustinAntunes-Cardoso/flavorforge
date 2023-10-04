@@ -1,0 +1,19 @@
+.background {
+	padding-top: calc(var(--mantine-spacing-xl) * 2);
+  	padding-bottom: calc(var(--mantine-spacing-xl) * 2);
+	background-color: --mantine-color-brand-5;
+}
+
+.text {
+	color: white;
+}
+
+.button {
+	border-radius: 5rem;
+    background-color: --mantine-color-secondary-3;
+	
+    &:hover {
+		background-color: --mantine-color-secondary-5;
+		border-color: --mantine-color-secondary-4;
+	}
+}
