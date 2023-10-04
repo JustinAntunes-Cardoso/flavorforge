@@ -1,7 +1,7 @@
-import { Card, Image, Text, ActionIcon, Badge, Group, Center, Avatar, AspectRatio } from '@mantine/core';
+import { Card, Image, Text, ActionIcon, Badge, Group, Center, Avatar, AspectRatio, useMantineTheme } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { routes } from '../../utils/constants/globals';
-import useRecipeCard from '../../utils/styles/component/useRecipeCard';
+import classes from './RecipeCard.module.scss'
 import { IconBookmark, IconHeart, IconShare } from '@tabler/icons-react';
 
 interface RecipeCardProps {
@@ -13,7 +13,7 @@ interface RecipeCardProps {
 }
 
 const RecipeCard = ({ image, title, description, rating, date }: RecipeCardProps) => {
-    const { classes, theme } = useRecipeCard();
+    const theme = useMantineTheme();
 
     return (
         <Card key={title} p="md" radius="md" className={classes.card} component={Link} to={routes.recipe} state={{ image: image, title: title, description: description, rating: rating, date: date }}>
@@ -23,14 +23,14 @@ const RecipeCard = ({ image, title, description, rating, date }: RecipeCardProps
             <Badge className={classes.rating} variant="gradient" gradient={{ from: 'yellow', to: 'red' }}>
                 {rating}
             </Badge>
-            <Text color="dimmed" size="xs" transform="uppercase" weight={700} mt="md">
+            <Text c="dimmed" size="xs" fz="sm" mt="md">
                 {date}
             </Text>
             <Text className={classes.title} mt={5}>
                 {title}
             </Text>
 
-            <Group position="apart" className={classes.footer}>
+            <Group justify="space-between" className={classes.footer}>
                 <Center>
                     <Avatar src={image} size={24} radius="xl" mr="xs" />
                     <Text fz="sm" inline>
@@ -38,7 +38,7 @@ const RecipeCard = ({ image, title, description, rating, date }: RecipeCardProps
                     </Text>
                 </Center>
 
-                <Group spacing={8} mr={0}>
+                <Group gap={8} mr={0}>
                     <ActionIcon className={classes.action}>
                         <IconHeart size="1rem" color={theme.colors.red[6]} />
                     </ActionIcon>
