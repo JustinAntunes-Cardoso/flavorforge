@@ -5,7 +5,6 @@ import Input from './pages/Input';
 import RecipeList from './pages/RecipeList';
 import Recipe from './pages/Recipe';
 import NotFound from './pages/NotFound';
-import GlobalFonts from './utils/constants/GlobalFonts';
 import { routes } from './utils/constants/globals';
 import globalTheme from './utils/constants/theme';
 import './App.scss'
@@ -14,7 +13,6 @@ function App() {
   return (
     <MantineProvider
       theme={globalTheme}>
-      <GlobalFonts />
       <Router>
         <Routes>
           <Route path={routes.home} Component={Home} />
