@@ -1,6 +1,6 @@
-import { MantineThemeOverride } from '@mantine/core';
+import { createTheme } from '@mantine/core';
 
-const globalTheme: MantineThemeOverride = {
+const globalTheme = createTheme({
 	colors: {
 		brand: [
 			'#E65100',
@@ -41,6 +41,6 @@ const globalTheme: MantineThemeOverride = {
 	},
 	primaryColor: 'brand',
 	fontFamily: 'Greycliff CF, sans-serif',
-};
+});
 
 export default globalTheme;

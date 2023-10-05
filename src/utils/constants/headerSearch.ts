@@ -2,57 +2,9 @@ import { HeaderSearchProps } from '../types/types';
 
 export const headerData: HeaderSearchProps = {
 	links: [
-		{
-			link: '/about',
-			label: 'Features',
-		},
-		{
-			link: '#1',
-			label: 'Learn',
-			links: [
-				{
-					link: '/docs',
-					label: 'Documentation',
-				},
-				{
-					link: '/resources',
-					label: 'Resources',
-				},
-				{
-					link: '/community',
-					label: 'Community',
-				},
-				{
-					link: '/blog',
-					label: 'Blog',
-				},
-			],
-		},
-		{
-			link: '/about',
-			label: 'About',
-		},
-		{
-			link: '/pricing',
-			label: 'Pricing',
-		},
-		{
-			link: '#2',
-			label: 'Support',
-			links: [
-				{
-					link: '/faq',
-					label: 'FAQ',
-				},
-				{
-					link: '/demo',
-					label: 'Book a demo',
-				},
-				{
-					link: '/forums',
-					label: 'Forums',
-				},
-			],
-		},
-	],
+		{ link: '/about', label: 'Features' },
+		{ link: '/pricing', label: 'Pricing' },
+		{ link: '/learn', label: 'Learn' },
+		{ link: '/community', label: 'Community' },
+	]
 };
