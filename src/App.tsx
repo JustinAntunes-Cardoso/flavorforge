@@ -7,6 +7,8 @@ import Recipe from './pages/Recipe';
 import NotFound from './pages/NotFound';
 import { routes } from './utils/constants/globals';
 import globalTheme from './utils/constants/theme';
+// core styles are required for all packages
+import '@mantine/core/styles.css';
 import './App.scss'
 
 function App() {
