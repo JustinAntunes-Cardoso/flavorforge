@@ -3,7 +3,7 @@ import Recipes from '../../layout/Recipes';
 import Footer from '../../layout/Footer';
 
 //Global data
-import { headerData } from '../../utils/constants/headerSearch';
+import { headerData } from '../../utils/constants/globals';
 import { footerData } from '../../utils/constants/footerLinks';
 
 const RecipeList = () => {
