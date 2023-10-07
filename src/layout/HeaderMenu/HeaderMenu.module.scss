@@ -1,55 +1,40 @@
 @use '../../styles/partials/mixins' as *;
 
 .header {
-	height: 5.6rem;
-	padding-bottom: 12rem;
-	background-color: var(--mantine-color-brand-3);
-	border-bottom: 0.1rem solid light-dark(var(--mantine-color-brand-7), var(--mantine-color-dark-4));
+  height: 5.6rem;
+  background-color: var(--mantine-color-brand-6);
+  border-bottom: 0.1rem solid light-dark(var(--mantine-color-accent-3), var(--mantine-color-dark-4));
 }
 
 .inner {
-	@include flex();
-	height: 5.6rem;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 1.6rem;
-
-	@include tablet {
-			margin: 0;
-			align-self: center;
-			gap: 1.4rem;
-		}
-
-		@include desktop {
-			width: 115rem;
-			margin: 0 auto;
-			gap: 2rem;
-		}
+  @include flex();
+  height: 5.6rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.6rem;
 }
 
 .logo {
-	height: 2.8rem;
+  height: 2.8rem;
 }
 
 .link {
-	display: block;
-	line-height: 1;
-	padding: 0.8rem 1.2rem;
-	border-radius: var(--mantine-radius-sm);
-	text-decoration: none;
-	color: light-dark(white, var(--mantine-color-dark-0));
-	font-size: var(--mantine-font-size-sm);
-	font-weight: 500;
+  display: block;
+  line-height: 1;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  color: light-dark(white, var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
 
-	@mixin hover {
-		background-color: light-dark(
-			var(--mantine-color-gray-0),
-			var(--mantine-color-dark-6)
-		);
-	}
+  &:hover {
+    background-color: light-dark(var(--mantine-color-secondary-3), var(--mantine-color-brand-8));
+    color: light-dark(var(--mantine-color-accent-0), var(--mantine-color-brand-8));
+  }
 
-	[data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
+  [data-mantine-color-scheme] &[data-active] {
+    background-color: var(--mantine-color-secondary-6);
     color: var(--mantine-color-white);
   }
 }
