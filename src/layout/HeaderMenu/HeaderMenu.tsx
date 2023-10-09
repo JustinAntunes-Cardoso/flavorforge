@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { Container, Group, Burger, Image, Button } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Link } from 'react-router-dom';
-import { HeaderSearchProps } from '../../utils/types/types';
+import { Link, useLocation } from 'react-router-dom';
+import { NavBarProps } from '../../utils/types/types';
 import classes from './HeaderMenu.module.scss';
 
 //FlavourForge Logo
 const logoUrl = import.meta.env.BASE_URL + 'vite.svg';
 
-const HeaderMenu = ({ links }: HeaderSearchProps) => {
+const HeaderMenu = ({ links }: NavBarProps) => {
+    const location = useLocation();
     const [opened, { toggle }] = useDisclosure(false);
-    const [active, setActive] = useState(links[0].link);
+    const [active, setActive] = useState(location.pathname);
 
     const items = links.map((link) => (
         <Button
@@ -28,7 +29,7 @@ const HeaderMenu = ({ links }: HeaderSearchProps) => {
     return (
         <header className={classes.header}>
             <Container size="md" className={classes.inner}>
-                <Image src={logoUrl} className={classes.logo} />
+                <Image src={logoUrl} className={classes.logo} alt='FlavorForge Logo' />
                 <nav>
                     <Group gap={5} visibleFrom="xs">
                         {items}
