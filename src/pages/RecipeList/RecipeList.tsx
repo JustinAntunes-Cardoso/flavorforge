@@ -3,15 +3,14 @@ import Recipes from '../../layout/Recipes';
 import Footer from '../../layout/Footer';
 
 //Global data
-import { headerData } from '../../utils/constants/globals';
-import { footerData } from '../../utils/constants/footerLinks';
+import { linkData } from '../../utils/constants/globals';
 
 const RecipeList = () => {
     return (
         <>
-            <HeaderMenu links={headerData.links} />
+            <HeaderMenu links={linkData.links} />
             <Recipes />
-            <Footer data={footerData.data} />
+            <Footer links={linkData.links} />
         </>
     )
 }

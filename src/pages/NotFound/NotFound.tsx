@@ -3,16 +3,15 @@ import Footer from '../../layout/Footer';
 import _404 from '../../layout/404/404';
 
 //Global data
-import { headerData } from '../../utils/constants/globals';
-import { footerData } from '../../utils/constants/footerLinks';
+import { linkData } from '../../utils/constants/globals';
 
 //Wildcard page if there's an error with URL
 const NotFound = () => {
     return (
         <>
-            <Header links={headerData.links} />
+            <Header links={linkData.links} />
             <_404 />
-            <Footer data={footerData.data} />
+            <Footer links={linkData.links} />
         </>
     )
 }
