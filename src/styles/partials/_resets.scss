@@ -4,32 +4,44 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::placeholder {
-	color: $primary-text-color;
-	@include font-selector(1.4rem, 2rem, 400);
-	font-family: $font-stack;
+  color: $primary-text-color;
+  @include font-selector(1.4rem, 2rem, 400);
+  font-family: $font-stack;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-	font-size: 1.6rem;
-	font-family: $font-stack;
-	margin: 0;
-	color: $primary-text-color;
-	background-color: $primary-background-color;
+  font-size: 1.6rem;
+  font-family: $font-stack;
+  margin: 0;
+  color: $primary-text-color;
+  background-color: $primary-background-color;
 }
 
 a {
-	text-decoration: none;
-	color: $primary-text-color;
+  text-decoration: none;
+  color: $primary-text-color;
 }
 
 input {
-	font-family: $font-stack;
+  font-family: $font-stack;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  text-transform: none;
 }
