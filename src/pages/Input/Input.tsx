@@ -3,15 +3,14 @@ import Form from '../../layout/Form'
 import Footer from '../../layout/Footer'
 
 //Global data
-import { headerData } from '../../utils/constants/globals'
-import { footerData } from '../../utils/constants/footerLinks'
+import { linkData } from '../../utils/constants/globals'
 
 const Input = () => {
     return (
         <>
-            <HeaderMenu links={headerData.links} />
+            <HeaderMenu links={linkData.links} />
             <Form />
-            <Footer data={footerData.data} />
+            <Footer links={linkData.links} />
         </>
     )
 }
