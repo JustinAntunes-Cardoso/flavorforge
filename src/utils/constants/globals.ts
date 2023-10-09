@@ -1,4 +1,4 @@
-import { HeaderSearchProps } from '../types/types';
+import { NavBarProps } from '../types/types';
 
 export const routes = {
   home: '/',
@@ -7,7 +7,7 @@ export const routes = {
   recipe: '/recipe',
 };
 
-export const headerData: HeaderSearchProps = {
+export const linkData: NavBarProps = {
   links: [
     { link: routes.home, label: 'Home' },
     { link: routes.input, label: 'Create' },
@@ -18,4 +18,6 @@ export const headerData: HeaderSearchProps = {
 
 export const hrefs = {
   github: 'https://github.com/JustinAntunes-Cardoso/flavorforge',
+  linkedIn: 'https://www.linkedin.com/in/justinantunescardoso/',
+  portfolio: 'https://justinantunescardoso.com/',
 };
