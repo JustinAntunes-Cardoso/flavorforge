@@ -9,7 +9,7 @@ interface AnchorButtonProps {
 const AnchorButton = ({ text, href }: AnchorButtonProps) => {
 
     return (
-        <Button variant="default" radius="xl" size="md" className={classes.anchor} component='a' href={href} target="_blank" rel="noopener noreferrer">
+        <Button classNames={{ root: classes.root }} radius="xl" size="md" component='a' href={href} target="_blank" rel="noopener noreferrer">
             {text}
         </Button>
     )
