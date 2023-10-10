@@ -67,12 +67,12 @@
 
   &:hover {
     border-color: var(--mantine-color-secondary-6);
-    background-color: var(--mantine-color-secondary-4);
+    background-color: var(--mantine-color-secondary-5);
     color: var(--mantine-color-white);
   }
 
   &:focus {
-    outline: 0.2rem solid var(--mantine-color-secondary-5);
-    background-color: var(--mantine-color-secondary-4);
+    outline: 0.2rem solid var(--mantine-color-secondary-6);
+    background-color: var(--mantine-color-secondary-5);
   }
 }
