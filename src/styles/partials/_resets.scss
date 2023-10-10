@@ -10,7 +10,6 @@
 ::placeholder {
   color: $primary-text-color;
   @include font-selector(1.4rem, 2rem, 400);
-  font-family: $font-stack;
 }
 
 html {
@@ -19,7 +18,6 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: $font-stack;
   margin: 0;
   color: $primary-text-color;
   background-color: $primary-background-color;
@@ -28,10 +26,6 @@ body {
 a {
   text-decoration: none;
   color: $primary-text-color;
-}
-
-input {
-  font-family: $font-stack;
 }
 
 input,
