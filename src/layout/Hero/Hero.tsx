@@ -16,7 +16,7 @@ const Hero = () => {
                         <Title className={classes.title}>
                             <span className={classes.highlight}>Welcome</span> to FlavorForge
                         </Title>
-                        <Text color="dimmed" mt="md" className={classes.subtitle}>
+                        <Text c="white" mt="md" className={classes.subtitle}>
                             Your Recipe Magic Wand <span className={classes.emoji}>🪄</span>
                         </Text>
 
@@ -24,9 +24,11 @@ const Hero = () => {
                             mt={30}
                             spacing="sm"
                             size="sm"
-                            icon={<ThemeIcon size={20} radius="xl">
-                                <IconCheck size={rem(15)} stroke={1.5} className={classes.bullet} />
-                            </ThemeIcon>}
+                            icon={
+                                <ThemeIcon size={20} radius="xl" className={classes.bullet}>
+                                    <IconCheck style={{ width: rem(12), height: rem(12) }} stroke={1.5} />
+                                </ThemeIcon>
+                            }
                             className={classes.text}
                         >
                             <List.Item>
@@ -39,11 +41,12 @@ const Hero = () => {
                                 <b>Creative Cooking</b> – Discover new recipes and experiment with ingredients you already have.
                             </List.Item>
                         </List>
-
-                        <Group mt={30}>
-                            <LinkButton to={routes.input} text='Get Started' />
-                            <AnchorButton href={hrefs.github} text='Source code' />
-                        </Group>
+                        <div className={classes.buttons}>
+                            <Group mt={30}>
+                                <LinkButton to={routes.input} text='Get Started' />
+                                <AnchorButton href={hrefs.github} text='Source code' />
+                            </Group>
+                        </div>
                     </div>
                     <Image src={veg} className={classes.image} alt='Vegetables Icon' />
                 </div>
