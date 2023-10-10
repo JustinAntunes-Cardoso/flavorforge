@@ -1,15 +1,21 @@
 @import '../../styles/partials/variables';
 
-.anchor {
-	@media (max-width: $mobileL-breakpoint) {
-		flex: 1;
-	}
-	color: var(--mantine-color-white);
-	background-color: var(--mantine-color-brand-6);
-	border-color: var(--mantine-color-accents-7);
+.root {
+  @media (max-width: $mobileL-breakpoint) {
+    flex: 1;
+  }
 
-	&:hover {
-		background-color: var(--mantine-color-accents-3);
-		border-color: var(--mantine-color-accents-7);
-	}
+  color: var(--mantine-color-brand-0);
+  background-color: var(--mantine-color-brand-4) !important;
+  border-color: var(--mantine-color-accent-7) !important;
+
+  &:hover {
+    background-color: var(--mantine-color-brand-6) !important;
+    color: var(--mantine-color-brand-0) !important;
+  }
+
+  &:active {
+    background-color: var(--mantine-color-brand-7) !important;
+    border-color: var(--mantine-color-accent-4) !important;
+  }
 }
