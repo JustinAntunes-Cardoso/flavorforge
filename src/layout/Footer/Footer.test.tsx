@@ -1,97 +1,32 @@
 import { render, screen } from '@testing-library/react';
+import { MantineProvider } from '@mantine/core';
 import Footer from './Footer';
-import { FooterLinksProps } from '../../utils/types/types';
-import { MantineProvider, MantineThemeOverride } from '@mantine/core';
-
-const mockTheme: MantineThemeOverride = {
-    colors: {
-        brand: [
-            '#E65100',
-            '#EF6C00',
-            '#F57C00',
-            '#FB8C00',
-            '#FF9800',
-            '#FFA726',
-            '#FFB74D',
-            '#FFE082',
-            '#FFECB3',
-            '#FFF6E1',
-        ],
-        secondary: [
-            '#33691E',
-            '#558B2F',
-            '#689F38',
-            '#7CB342',
-            '#8BC34A',
-            '#9CCC65',
-            '#AED581',
-            '#E6EE9C',
-            '#DCEDC8',
-            '#F2FCE8',
-        ],
-        accents: [
-            '#F57F17',
-            '#F9A825',
-            '#FBC02D',
-            '#FBC02D',
-            '#FFEB3B',
-            '#FFEE58',
-            '#FFEE58',
-            '#FFF59D',
-            '#FFF9C4',
-            '#FFFEE0',
-        ],
-    },
-    primaryColor: 'brand',
-};
-
-//Data prop
-const mockData: FooterLinksProps = {
-    data: [
-        {
-            title: 'Group 1',
-            links: [
-                { label: 'Link 1', link: '/link1' },
-                { label: 'Link 2', link: '/link2' },
-            ],
-        },
-        {
-            title: 'Group 2',
-            links: [
-                { label: 'Link 3', link: '/link3' },
-                { label: 'Link 4', link: '/link4' },
-            ],
-        },
-    ]
-};
-
-
+import { linkData as mockLinkData } from '../../utils/constants/globals';
+import { globalTheme as mockTheme } from '../../utils/constants/theme';
 
 describe('Footer Component', () => {
     it('should render the footer text', () => {
         render(
             <MantineProvider theme={mockTheme}>
-                <Footer data={mockData.data} />
+                <Footer links={mockLinkData.links} />
             </MantineProvider>
         );
-        const footerElement = screen.getByText(/© 2023 FlavourForge. All rights reserved./i);
+        const footerElement = screen.getByText(/© 2023 Bluefin. All rights reserved./i);
         expect(footerElement).toBeInTheDocument();
     });
 
     it('should render the links from props', () => {
         render(
             <MantineProvider theme={mockTheme}>
-                <Footer data={mockData.data} />
+                <Footer links={mockLinkData.links} />
             </MantineProvider>
         );
 
         // Check if each link label is present in the rendered output
-        mockData.data.forEach((group) => {
-            group.links.forEach((link) => {
-                const linkElement = screen.getByText(link.label);
-                expect(linkElement).toBeInTheDocument();
-                expect(linkElement).toHaveAttribute('href', link.link);
-            });
+        mockLinkData.links.forEach((link) => {
+            const linkElement = screen.getByText(link.label);
+            expect(linkElement).toBeInTheDocument();
+            expect(linkElement).toHaveAttribute('href', link.link);
         });
     });
 });

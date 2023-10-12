@@ -19,7 +19,6 @@ const Hero = () => {
                         <Text c="white" mt="md" className={classes.subtitle}>
                             Your Recipe Magic Wand <span className={classes.emoji}>🪄</span>
                         </Text>
-
                         <List
                             mt={30}
                             spacing="sm"
