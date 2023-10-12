@@ -1,6 +1,6 @@
 import { createTheme } from '@mantine/core';
 
-const globalTheme = createTheme({
+export const globalTheme = createTheme({
   colors: {
     brand: [
       '#fff6e1',
@@ -42,5 +42,3 @@ const globalTheme = createTheme({
   primaryColor: 'brand',
   fontFamily: 'Greycliff CF, sans-serif',
 });
-
-export default globalTheme;
